@@ -1,0 +1,14 @@
+// Modulo para titulos de secciones
+.Title-sections {
+	text-align: center;
+	color: #444;
+	margin: 0;
+	padding: .5em 0;
+}
+
+// ancho maximo para el contenedor
+.container {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+}

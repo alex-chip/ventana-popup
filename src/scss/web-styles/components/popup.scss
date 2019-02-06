@@ -1,0 +1,113 @@
+.container {
+    color: var(--second-color);
+
+    @include to(l) {
+        padding: 0 $gap;
+    }
+}
+
+.Overlay {
+    background: rgba(#000, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+}
+
+.Popup {
+    background: #F8F8F8;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 5px 0 rgba(#000, .3);
+    border-radius: 3px;
+    font-family: sans-serif;
+    width: 600px;
+    padding: 20px;
+
+    // animacion del popup
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all .6s ease;
+
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &.active &__title {
+        animation: entradaPopup .8s ease .5s forwards;
+    }
+
+    &.active &__description {
+        animation: entradaPopup .8s ease .5s forwards;
+    }
+
+    &.active &__container--inputs {
+        animation: entradaPopup .8s ease .8s forwards;        
+    }
+
+    &__title {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: bold;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    &__description {
+        margin-top: 0;
+        font-size: 24px;
+        margin-bottom: 40px;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    &__btn--close {
+        position: absolute;
+        right: 1em;
+        color: #BBB;
+        font-weight: bold;
+        transition: all .3s ease;
+        font-size: 16px;
+        line-height: 16px;
+
+        &:hover {
+            text-decoration: none;
+            color: var(--second-color);
+        }
+    }
+
+    &__form {
+
+        &--input {
+            display: block;
+            width: 100%;
+            margin-bottom: 1em;
+            font-size: 18px;
+            line-height: 42px;
+            text-align: center;
+            border: 1px solid #BBB;
+            border-radius: 3px;
+        }
+    }
+
+    &__container--inputs {
+        opacity: 0;
+    }
+}
+
+@keyframes entradaPopup {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

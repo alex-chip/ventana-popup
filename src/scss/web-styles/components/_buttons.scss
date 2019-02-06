@@ -1,0 +1,15 @@
+.Button {
+    background: var(--first-color);
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s ease;
+    height: 40px;
+    padding: .5em 3.5em;
+    font-weight: bold;
+
+    &:hover {
+        background: darken($first-color, 10);
+    }
+}
